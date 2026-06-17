@@ -1,0 +1,260 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3925), pid=28932, tid=19868
+#
+# JRE version:  (21.0.8+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.8+1-b1038.71, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx512m D:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\lib\hvigor-java-daemon.jar 45050 00000050dffb305d5c2f9349fb542b0adf5f59f26deb21775477a53d2f01dd8af3239274ee2bd4ee8f1a7a871ea126fb42423b11c41141b9459d2e12986ffe37249accbd05659fec847d876744ebaa3cc8fe414d54f00da6c4e1466c79597d44
+
+Host: 11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz, 12 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7920)
+Time: Wed Jun 17 15:54:26 2026 elapsed time: 0.096976 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002be9910):  JavaThread "Unknown thread" [_thread_in_vm, id=19868, stack(0x0000000000c80000,0x0000000000d80000) (1024K)]
+
+Stack: [0x0000000000c80000,0x0000000000d80000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ebeb9]
+V  [jvm.dll+0x8cbec3]
+V  [jvm.dll+0x8ce47e]
+V  [jvm.dll+0x8ceb63]
+V  [jvm.dll+0x28adf6]
+V  [jvm.dll+0x6e8695]
+V  [jvm.dll+0x6dbeea]
+V  [jvm.dll+0x36689b]
+V  [jvm.dll+0x36e466]
+V  [jvm.dll+0x3c08c6]
+V  [jvm.dll+0x3c0b98]
+V  [jvm.dll+0x3390cc]
+V  [jvm.dll+0x339dbb]
+V  [jvm.dll+0x893349]
+V  [jvm.dll+0x3cda98]
+V  [jvm.dll+0x87c368]
+V  [jvm.dll+0x46283e]
+V  [jvm.dll+0x464521]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c48c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff9b84d32c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000000002c106c0 WorkerThread "GC Thread#0"                     [id=27780, stack(0x0000000016b80000,0x0000000016c80000) (1024K)]
+  0x0000000002c26340 ConcurrentGCThread "G1 Main Marker"            [id=29316, stack(0x0000000016c80000,0x0000000016d80000) (1024K)]
+  0x0000000002c2a4a0 WorkerThread "G1 Conc#0"                       [id=26732, stack(0x0000000016d80000,0x0000000016e80000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9b7bbc0b7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff9b8547d58] Heap_lock - owner thread: 0x0000000002be9910
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+ Metaspace       used 0K, committed 0K, reserved 0K
+  class space    used 0K, committed 0K, reserved 0K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+
+Card table byte_map: [0x0000000016280000,0x0000000016380000] _byte_map_base: 0x0000000015b80000
+
+Marking Bits: (CMBitMap*) 0x0000000002c115d0
+ Bits: [0x0000000016380000, 0x0000000016b80000)
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library D:\Program Files\Huawei\DevEco Studio\jbr\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff750650000 - 0x00007ff75065a000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\java.exe
+0x00007ffa63940000 - 0x00007ffa63ba7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa62320000 - 0x00007ffa623e9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa610c0000 - 0x00007ffa614b1000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa60f70000 - 0x00007ffa610bb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa0f9b0000 - 0x00007ffa0f9cb000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\VCRUNTIME140.dll
+0x00007ffa15230000 - 0x00007ffa15248000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\jli.dll
+0x00007ffa63550000 - 0x00007ffa63715000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa4f7a0000 - 0x00007ffa4fa33000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\COMCTL32.dll
+0x00007ffa614c0000 - 0x00007ffa614e7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa62040000 - 0x00007ffa620e9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa61e90000 - 0x00007ffa61ebb000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa615b0000 - 0x00007ffa616db000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa60cb0000 - 0x00007ffa60d53000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa61c70000 - 0x00007ffa61ca1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa5a950000 - 0x00007ffa5a95c000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\vcruntime140_1.dll
+0x00007ff9e3230000 - 0x00007ff9e32bd000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\msvcp140.dll
+0x00007ff9b7870000 - 0x00007ff9b863b000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\server\jvm.dll
+0x00007ffa61d40000 - 0x00007ffa61dfb000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa62d50000 - 0x00007ffa62df7000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa637e0000 - 0x00007ffa638f8000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa62e60000 - 0x00007ffa62ed4000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa5f140000 - 0x00007ffa5f19e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffa582b0000 - 0x00007ffa582bb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa536f0000 - 0x00007ffa53725000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa5f120000 - 0x00007ffa5f134000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffa5efe0000 - 0x00007ffa5effb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa28830000 - 0x00007ffa2883a000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\jimage.dll
+0x00007ffa5dfe0000 - 0x00007ffa5e222000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa61880000 - 0x00007ffa61c02000 	C:\WINDOWS\System32\combase.dll
+0x00007ffa623f0000 - 0x00007ffa624c7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffa50280000 - 0x00007ffa502bb000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa60220000 - 0x00007ffa602c5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa0f990000 - 0x00007ffa0f9b0000 	D:\Program Files\Huawei\DevEco Studio\jbr\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\Program Files\Huawei\DevEco Studio\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b;D:\Program Files\Huawei\DevEco Studio\jbr\bin\server
+
+VM Arguments:
+jvm_args: -Xmx512m 
+java_command: D:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\lib\hvigor-java-daemon.jar 45050 00000050dffb305d5c2f9349fb542b0adf5f59f26deb21775477a53d2f01dd8af3239274ee2bd4ee8f1a7a871ea126fb42423b11c41141b9459d2e12986ffe37249accbd05659fec847d876744ebaa3cc8fe414d54f00da6c4e1466c79597d44
+java_class_path (initial): D:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\lib\hvigor-java-daemon.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=D:\Program Files\Huawei\DevEco Studio\jbr
+PATH=D:\Program Files\Huawei\DevEco Studio\tools\node;D:\Program Files\Huawei\DevEco Studio\jbr\bin;D:\新建文件夹\bin;D:\bin2\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;E:\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Bandizip\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;D:\Windows Performance Toolkit\;C:\Users\8848\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\msys64\clang64\bin;D:\IntelliJ IDEA 2024.3.4\bin;C:\Users\8848\AppData\Roaming\npm;d:\Program Files\Huawei\DevEco Studio\bin
+USERNAME=8848
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 167 Stepping 1, GenuineIntel
+TMP=C:\Users\8848\AppData\Local\Temp
+TEMP=C:\Users\8848\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+Process memory usage:
+Resident Set Size: 13540K (0% of 16575800K total physical memory with 814748K free physical memory)
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7920)
+OS uptime: 6 days 4:21 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 167 stepping 1 microcode 0x24, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, avx512_ifma
+Processor Information for the first 12 processors :
+  Max Mhz: 2592, Current Mhz: 2592, Mhz Limit: 2592
+
+Memory: 4k page, system-wide physical 16187M (795M free)
+TotalPageFile size 26376M (AvailPageFile size 155M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 64M, peak: 317M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.8+1-b1038.71) for windows-amd64 JRE (21.0.8+1-b1038.71), built on 2025-09-04 by "builduser" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
