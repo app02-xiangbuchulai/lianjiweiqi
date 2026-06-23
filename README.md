@@ -1,3 +1,4 @@
+<img width="474" height="929" alt="381BE21AA1B61D1BF056636DD7199123" src="https://github.com/user-attachments/assets/b7255c18-eacd-4417-8826-e1d408bee072" />
 # 🎮 联机围棋
 
 **一款轻量、简洁的网页端联机围棋对弈系统**，支持多人在线匹配、实时落子、悔棋、认输、计时对局，无需下载客户端，浏览器打开即可对弈。
